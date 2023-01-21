@@ -27,7 +27,7 @@ else:
     app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:////tmp/test.db"
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-MIGRATE = Migrate(app, db, compare_type = True)
+MIGRATE = Migrate(app, db, compare_type = True, render_as_batch=True)
 db.init_app(app)
 
 # Allow CORS requests to this API
